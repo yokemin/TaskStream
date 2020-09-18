@@ -53,6 +53,12 @@ public class Main {
         }
     }
 
+    public static void printDataUsingStreams(ArrayList<Task> tasksData) {
+        System.out.println("Printing data using streams:");
+        tasksData.stream() //.parallelStream() --> use on large data
+                .forEach(System.out::println); // indicating the method you're calling
+    }
+
     public static void printDeadlines(ArrayList<Task> tasksData) {
         for (Task t : tasksData) {
             if (t instanceof Deadline) {
@@ -60,4 +66,12 @@ public class Main {
             }
         }
     }
+
+    public static void printDeadlinesUsingStreams(ArrayList<Task> tasksData) {
+        System.out.println("Printing deadlines using streams");
+        tasksData.stream()
+                .filter((t) -> t instanceof Deadline)
+                .forEach(System.out::println); // predicate is like a condition
+    }
+
 }

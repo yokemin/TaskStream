@@ -70,7 +70,7 @@ public class Main {
     public static void printDeadlinesUsingStreams(ArrayList<Task> tasksData) {
         System.out.println("Printing deadlines using streams");
         tasksData.stream()
-                .filter((t) -> t instanceof Deadline)
+                .filter((t) -> t instanceof Deadline) // this is a lambda function
                 .forEach(System.out::println); // predicate is like a condition
     }
 
